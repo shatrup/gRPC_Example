@@ -1,0 +1,23 @@
+syntax="proto3";
+ 
+package proto;
+ 
+option go_package = "practice.com/grpc-practice";
+ 
+ 
+message NewExample {
+   string name = 1;
+   string description = 2;
+   bool done = 3;
+}
+ 
+message Example {
+   string name = 1;
+   string description = 2;
+   bool done = 3;
+   string id = 4;
+}
+ 
+service ExampleService {
+   rpc CreateExample(NewExample) returns (Example) {}
+}
